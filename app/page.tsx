@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowDown, Github, Linkedin, Mail, ExternalLink, Code, Palette, Globe } from 'lucide-react'
+import { ArrowDown, Github, Linkedin, Mail, ExternalLink, Code, Palette, Globe, BrainCircuit } from 'lucide-react'
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -10,7 +10,7 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <main className="min-h-screen bg-gradient-to-br from-slate-800 via-stone-600 to-slate-700">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 glass">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,7 +27,7 @@ export default function Home() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-white hover:text-purple-300 transition-colors duration-200"
+                  className="text-white hover:text-stone-300 transition-colors duration-200"
                 >
                   {item}
                 </button>
@@ -39,8 +39,9 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 to-blue-600/10"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-300/20 to-blue-300/15"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-stone-700/10 to-stone-800/20"></div>
         </div>
         
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6 lg:px-8 relative z-10">
@@ -59,13 +60,19 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
               <button
                 onClick={() => scrollToSection('projects')}
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 transform hover:scale-105"
+                className="border border-stone-400 text-stone-300 hover:bg-stone-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200"
               >
-                View My Work
+                View My Projects
+              </button>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="border border-stone-400 text-stone-300 hover:bg-stone-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200"
+              >
+                About Me
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="border border-purple-400 text-purple-300 hover:bg-purple-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200"
+                className="border border-stone-400 text-stone-300 hover:bg-stone-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200"
               >
                 Get In Touch
               </button>
@@ -96,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-slate-800/50">
+      <section id="about" className="py-20 bg-gradient-to-b from-stone-800/30 to-slate-800/50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -106,9 +113,29 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
+            
+            {/* Personal Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <div className="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-full overflow-hidden border-4 border-stone-400 shadow-2xl">
+                <img 
+                  src="https://i.postimg.cc/qvgy7BdZ/IMG000.jpg" 
+                  alt="Amin Asgharzadeh"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I&apos;m a dedicated Data Scientist and GenAI Engineer with expertise in machine learning, 
-              artificial intelligence, and data-driven solutions that transform businesses and create value.
+              I am a Senior Data Scientist at American Bureau of Shipping specializing in Generative AI and LLMs with 5+ years of ML experience.
+              I&apos;ve built AI search platforms generating $4.2M in revenue, designed RAG chatbots, and implemented
+              LLM safety protocols. My expertise includes time-series forecasting, predictive modeling, and
+              leveraging vector databases with MLOps in Azure to deliver high-impact AI solutions.
             </p>
           </motion.div>
 
@@ -117,17 +144,17 @@ export default function Home() {
               {
                 icon: <Code className="w-8 h-8" />,
                 title: "Data Science",
-                description: "Expert in machine learning, statistical analysis, and data visualization using Python, R, and advanced analytics frameworks."
+                description: "Expert in machine learning, statistical analysis, and data visualization using Python, R, SQL, and advanced analytics platforms like Dataiku and Azure Synapse Analytics."
               },
               {
-                icon: <Palette className="w-8 h-8" />,
-                title: "GenAI Engineering",
-                description: "Building intelligent systems with LLMs, NLP, and generative AI technologies to solve complex business problems."
+                icon: <BrainCircuit className="w-8 h-8" />,
+                title: "Generative AI",
+                description: "Building intelligent systems with LLMs, NLP, and generative AI technologies using Langchain, LlamaIndex, HuggingFace, MCP, and Vector stores (Azure AI-Search) to solve complex business problems."
               },
               {
                 icon: <Globe className="w-8 h-8" />,
-                title: "AI Innovation",
-                description: "Developing cutting-edge AI solutions and staying at the forefront of emerging technologies in artificial intelligence."
+                title: "Application Development",
+                description: "Developing backend systems and interactive dashboards using FastAPI, Flask, React, Streamlit, Tableau, Dash (Plotly), and PowerBI with CI/CD practices through Git, GitHub, and Azure DevOps."
               }
             ].map((skill, index) => (
               <motion.div
@@ -138,7 +165,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="glass rounded-xl p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
               >
-                <div className="text-purple-400 mb-4 flex justify-center">
+                <div className="text-stone-400 mb-4 flex justify-center">
                   {skill.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">{skill.title}</h3>
@@ -168,22 +195,44 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "AI-Powered Analytics Platform",
-                description: "A comprehensive data science platform leveraging machine learning for predictive analytics and business intelligence.",
-                tech: ["Python", "TensorFlow", "Pandas", "Plotly", "AWS"],
-                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop"
+                title: "AI-Powered Search Engine for Renewal Opportunities",
+                description: "Developed an AI-driven search platform that identifies certification renewal opportunities, generating $4.2M in revenue for American Bureau of Shipping. Implemented CI/CD unit testing that reduced maintenance efforts by 3x and ensured AI model response consistency.",
+                tech: ["Azure AI Search", "Azure OpenAI", "Azure VM", "Azure App Service", "Azure DevOps", "Python", "Flask", "SQL", "Locust"],
+                image: "https://i.postimg.cc/RVPmzCFp/ai-powered-search-engine.jpg"
               },
               {
-                title: "GenAI Chatbot Solution",
-                description: "An intelligent conversational AI system built with large language models for enterprise customer service.",
-                tech: ["OpenAI GPT", "LangChain", "Vector Databases", "FastAPI"],
-                image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop"
+                title: "Text to SQL Agent",
+                description: "A natural language to SQL query agent that uses LangChain, OpenAI, and PostgreSQL to convert plain text questions into SQL queries and provide answers with interactive CLI.",
+                tech: ["LangChain", "OpenAI", "PostgreSQL", "Python", "CLI", "Streamlit", "Agentic AI"],
+                image: "https://i.postimg.cc/3w8dJpcT/Chat-GPT-Image-Jul-6-2025-01-05-15-PM-1.png",
+                github: "https://github.com/Asgharzade/txt2sql"
               },
               {
-                title: "Predictive ML Model",
-                description: "A machine learning pipeline for forecasting and anomaly detection with real-time data processing.",
-                tech: ["Scikit-learn", "MLflow", "Apache Kafka", "Docker"],
-                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop"
+                title: "Income Demographic Analysis",
+                description: "A machine learning project that analyzes demographic factors affecting income levels using census data, with data preprocessing, feature engineering, and model evaluation.",
+                tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
+                github: "https://github.com/Asgharzade/income-demographic-analysis"
+              },
+              {
+                title: "Ship Detection System",
+                description: "A sophisticated machine learning system designed to detect ships in satellite imagery and classify their properties using computer vision and deep learning techniques for maritime surveillance.",
+                tech: ["Computer Vision", "Deep Learning", "PIL", "NumPy", "Polars", "Jupyter"],
+                image: "https://i.postimg.cc/52bC6j7f/20171106-184551-Location-4-A-Heading-East-Ship-Freighter.jpg",
+                github: "https://github.com/Asgharzade/detect-the-ship"
+              },
+              {
+                title: "NLP Document Processing System",
+                description: "Created an automated document processing system that extracts key information from unstructured text using advanced natural language processing techniques.",
+                tech: ["Hugging Face", "spaCy", "BERT", "Flask", "MongoDB"],
+                image: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=400&h=250&fit=crop"
+              },
+              {
+                title: "Amazon Chronos Time Series Analysis",
+                description: "Advanced time series analysis and forecasting using Amazon Chronos with transformer-based models, LSTM networks, and ensemble methods for univariate and multivariate forecasting.",
+                tech: ["PyTorch", "Chronos", "Transformers", "LSTM", "ARIMA", "Prophet"],
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                github: "https://github.com/Asgharzade/amz-chronos"
               }
             ].map((project, index) => (
               <motion.div
@@ -194,10 +243,13 @@ export default function Home() {
                 viewport={{ once: true }}
                 className="glass rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300"
               >
-                <div className="h-48 bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-                  <div className="text-white text-6xl font-bold opacity-20">
-                    {project.title.charAt(0)}
-                  </div>
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
@@ -206,19 +258,30 @@ export default function Home() {
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="bg-purple-600/20 text-purple-300 px-2 py-1 rounded text-sm"
+                        className="bg-stone-600/20 text-stone-300 px-2 py-1 rounded text-sm"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
                   <div className="flex space-x-4">
-                    <button className="text-purple-400 hover:text-purple-300 transition-colors">
+                    <button className="text-stone-400 hover:text-stone-300 transition-colors">
                       <ExternalLink size={20} />
                     </button>
-                    <button className="text-purple-400 hover:text-purple-300 transition-colors">
-                      <Github size={20} />
-                    </button>
+                    {project.github ? (
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-stone-400 hover:text-stone-300 transition-colors"
+                      >
+                        <Github size={20} />
+                      </a>
+                    ) : (
+                      <button className="text-stone-400 hover:text-stone-300 transition-colors">
+                        <Github size={20} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -228,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-slate-800/50">
+      <section id="contact" className="py-20 bg-gradient-to-b from-slate-800/40 to-stone-800/60">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -245,14 +308,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
                 href="mailto:amin.asgharzadeh@gmail.com"
-                className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-all duration-200 transform hover:scale-105 flex items-center justify-center gap-2"
+                className="border border-stone-400 text-stone-300 hover:bg-stone-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <Mail size={20} />
                 Send Email
               </a>
               <a
                 href="https://www.linkedin.com/in/amin-asgharzadeh/"
-                className="border border-purple-400 text-purple-300 hover:bg-purple-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                className="border border-stone-400 text-stone-300 hover:bg-stone-600 hover:text-white px-8 py-3 rounded-full font-medium transition-all duration-200 flex items-center justify-center gap-2"
               >
                 <Linkedin size={20} />
                 LinkedIn
@@ -263,10 +326,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-slate-700">
+      <footer className="py-8 border-t border-stone-600 bg-gradient-to-r from-stone-800/20 to-slate-800/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-gray-400">
-            © 2024 Amin Asgharzadeh. Built with Next.js and deployed on Vercel.
+            © 2025 Amin Asgharzadeh. Built with Next.js and deployed on Vercel.
           </p>
         </div>
       </footer>
