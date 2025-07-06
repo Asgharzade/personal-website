@@ -50,7 +50,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
-              Hi, I'm{' '}
+              Hi, I&apos;m{' '}
               <span className="gradient-text">Amin Asgharzadeh</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
@@ -107,7 +107,7 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">About Me</h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              I'm a dedicated Data Scientist and GenAI Engineer with expertise in machine learning, 
+              I&apos;m a dedicated Data Scientist and GenAI Engineer with expertise in machine learning, 
               artificial intelligence, and data-driven solutions that transform businesses and create value.
             </p>
           </motion.div>
@@ -239,8 +239,8 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h2>
             <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-              I'm always interested in new opportunities and exciting projects. 
-              Let's connect and create something amazing together!
+              I&apos;m always interested in new opportunities and exciting projects. 
+              Let&apos;s connect and create something amazing together!
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
