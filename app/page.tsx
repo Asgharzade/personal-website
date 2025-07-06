@@ -201,22 +201,25 @@ export default function Home() {
                 image: "https://i.postimg.cc/RVPmzCFp/ai-powered-search-engine.jpg"
               },
               {
-                title: "GenAI Chatbot Solution",
-                description: "An intelligent conversational AI system built with large language models for enterprise customer service.",
-                tech: ["OpenAI GPT", "LangChain", "Vector Databases", "FastAPI"],
-                image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=250&fit=crop"
+                title: "Text to SQL Agent",
+                description: "A natural language to SQL query agent that uses LangChain, OpenAI, and PostgreSQL to convert plain text questions into SQL queries and provide answers with interactive CLI.",
+                tech: ["LangChain", "OpenAI", "PostgreSQL", "Python", "CLI", "Streamlit", "Agentic AI"],
+                image: "https://i.postimg.cc/3w8dJpcT/Chat-GPT-Image-Jul-6-2025-01-05-15-PM-1.png",
+                github: "https://github.com/Asgharzade/txt2sql"
               },
               {
-                title: "Predictive ML Model",
-                description: "A machine learning pipeline for forecasting and anomaly detection with real-time data processing.",
-                tech: ["Scikit-learn", "MLflow", "Apache Kafka", "Docker"],
-                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop"
+                title: "Income Demographic Analysis",
+                description: "A machine learning project that analyzes demographic factors affecting income levels using census data, with data preprocessing, feature engineering, and model evaluation.",
+                tech: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+                image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop",
+                github: "https://github.com/Asgharzade/income-demographic-analysis"
               },
               {
-                title: "Computer Vision Analytics Platform",
-                description: "Developed a computer vision system that analyzes retail store traffic patterns and customer engagement to optimize store layouts and product placement.",
-                tech: ["TensorFlow", "OpenCV", "PyTorch", "AWS SageMaker", "React"],
-                image: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=400&h=250&fit=crop"
+                title: "Ship Detection System",
+                description: "A sophisticated machine learning system designed to detect ships in satellite imagery and classify their properties using computer vision and deep learning techniques for maritime surveillance.",
+                tech: ["Computer Vision", "Deep Learning", "PIL", "NumPy", "Polars", "Jupyter"],
+                image: "https://i.postimg.cc/52bC6j7f/20171106-184551-Location-4-A-Heading-East-Ship-Freighter.jpg",
+                github: "https://github.com/Asgharzade/detect-the-ship"
               },
               {
                 title: "NLP Document Processing System",
@@ -225,10 +228,11 @@ export default function Home() {
                 image: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=400&h=250&fit=crop"
               },
               {
-                title: "Time Series Forecasting Tool",
-                description: "Built an advanced time series forecasting tool for financial markets that combines traditional statistical methods with deep learning approaches.",
-                tech: ["Prophet", "TensorFlow", "Pandas", "Plotly", "FastAPI"],
-                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop"
+                title: "Amazon Chronos Time Series Analysis",
+                description: "Advanced time series analysis and forecasting using Amazon Chronos with transformer-based models, LSTM networks, and ensemble methods for univariate and multivariate forecasting.",
+                tech: ["PyTorch", "Chronos", "Transformers", "LSTM", "ARIMA", "Prophet"],
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                github: "https://github.com/Asgharzade/amz-chronos"
               }
             ].map((project, index) => (
               <motion.div
@@ -264,9 +268,20 @@ export default function Home() {
                     <button className="text-stone-400 hover:text-stone-300 transition-colors">
                       <ExternalLink size={20} />
                     </button>
-                    <button className="text-stone-400 hover:text-stone-300 transition-colors">
-                      <Github size={20} />
-                    </button>
+                    {project.github ? (
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-stone-400 hover:text-stone-300 transition-colors"
+                      >
+                        <Github size={20} />
+                      </a>
+                    ) : (
+                      <button className="text-stone-400 hover:text-stone-300 transition-colors">
+                        <Github size={20} />
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
