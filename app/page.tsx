@@ -216,16 +216,17 @@ export default function Home() {
               },
               {
                 title: "Ship Detection System",
-                description: "A sophisticated machine learning system designed to detect ships in satellite imagery and classify their properties using computer vision and deep learning techniques for maritime surveillance.",
+                description: "A CNN model to detect vessels using satellite imagery and classify their properties using computer vision and deep learning techniques for maritime surveillance.",
                 tech: ["Computer Vision", "Deep Learning", "PIL", "NumPy", "Polars", "Jupyter"],
                 image: "https://i.postimg.cc/52bC6j7f/20171106-184551-Location-4-A-Heading-East-Ship-Freighter.jpg",
                 github: "https://github.com/Asgharzade/detect-the-ship"
               },
               {
-                title: "NLP Document Processing System",
-                description: "Created an automated document processing system that extracts key information from unstructured text using advanced natural language processing techniques.",
-                tech: ["Hugging Face", "spaCy", "BERT", "Flask", "MongoDB"],
-                image: "https://images.unsplash.com/photo-1456406644174-8ddd4cd52a06?w=400&h=250&fit=crop"
+                title: "MCP Chatbot with OpenAI Intent Detection",
+                description: "An intelligent Streamlit-based chatbot that uses OpenAI's GPT-4.1 for smart intent detection and Serper API for real-time web search. Features automatic detection of when to search vs. chat, optimized search queries, chat history persistence, and MCP (Model Context Protocol) compliant tool integration.",
+                tech: ["Streamlit", "OpenAI API", "Serper API", "MCP Protocol", "Python", "httpx", "Async/Await"],
+                image: "https://i.postimg.cc/R0c5Hs5N/st-mcp.png",
+                github: "https://github.com/Asgharzade/mcp-streamlit"
               },
               {
                 title: "Amazon Chronos Time Series Analysis",
